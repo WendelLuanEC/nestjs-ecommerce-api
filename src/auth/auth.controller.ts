@@ -16,11 +16,12 @@ export class AuthController {
     return this.authService.register(dto);
   }
 
-  @Get('confirm')
-  @ApiResponse({ status: 200, description: 'Email confirmed successfully.' })
-  async confirmEmail(@Query('email') email: string) {
-    return this.authService.confirmEmail(email);
-  }
+@Get('confirm')
+@ApiResponse({ status: 200, description: 'Email confirmed successfully.' })
+async confirmEmail(@Query('token') token: string) {
+  return this.authService.confirmEmail(token);
+}
+
 
   @Post('login')
   @ApiResponse({
