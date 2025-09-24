@@ -23,7 +23,7 @@
     "typeorm": "typeorm-ts-node-commonjs",
     "migration:show": "typeorm-ts-node-commonjs migration:show -d ./src/data-source.ts",
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d ./src/data-source.ts",
-  "start:migrate": "npm run migration:run && npm run start:prod"
+    "start:migrate": "npm run migration:run && npm run start:prod"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -37,6 +37,8 @@
     "bcrypt": "^6.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
+    "mailtrap": "^4.2.0",
+    "nodemailer": "^6.9.11",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "pg": "^8.16.3",
