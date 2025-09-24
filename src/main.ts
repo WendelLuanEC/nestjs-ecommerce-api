@@ -1,10 +1,12 @@
-// main.ts
+import * as crypto from 'crypto';
+(global as any).crypto = crypto;
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
 
   const config = new DocumentBuilder()
     .setTitle('NestJS E-commerce API')
