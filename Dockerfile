@@ -11,6 +11,8 @@ COPY . .
 
 RUN npm run build
 
+CMD npm run migration:run && npm run start:prod
+
 EXPOSE 3000
 
-CMD ["npm", "run", "start:prod"]
+CMD ["npm", "run", "start:migrate"]
