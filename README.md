@@ -1,16 +1,11 @@
 ````markdown
-<p align="center">
-  <a href="http://nestjs.com/" target="blank">
-    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
-  </a>
-</p>
 
 # 🛒 NestJS E-commerce API
 
 API de e-commerce desenvolvida com [NestJS](https://nestjs.com), PostgreSQL e Docker.  
 Inclui autenticação com JWT, cadastro com confirmação via e-mail (Mailtrap), gerenciamento de produtos, carrinho persistido e documentação via Swagger.
 
----
+
 
 ## 🚀 Funcionalidades
 
@@ -21,14 +16,14 @@ Inclui autenticação com JWT, cadastro com confirmação via e-mail (Mailtrap),
 - Carrinho de compras persistente no banco.
 - Documentação da API com Swagger.
 
----
+
 
 ## ⚙️ Pré-requisitos
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
----
+
 
 ## 📦 Rodando a aplicação
 
@@ -43,7 +38,7 @@ Isso já:
 * Executa migrations automaticamente.
 * Insere o usuário **admin** no banco.
 
----
+
 
 ## 👤 Usuário administrador
 
@@ -114,13 +109,6 @@ src/
 ├── users/        # Usuários
 └── main.ts       # Bootstrap da aplicação
 ```
-
----
-
-## 📄 License
-
-MIT © [NestJS](https://nestjs.com)
-
 ```
 
 ---
