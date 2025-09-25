@@ -34,7 +34,7 @@ export class AuthService {
 
   async confirmEmail(token: string) {
     try {
-      console.log('Confirmando token:', token);
+      
       const payload = this.jwtService.verify(token, {
         secret: process.env.JWT_SECRET,
       });
