@@ -1,5 +1,3 @@
-````markdown
-
 # 🛒 NestJS E-commerce API
 
 API de e-commerce desenvolvida com [NestJS](https://nestjs.com), PostgreSQL e Docker.  
@@ -108,8 +106,4 @@ src/
 ├── products/     # Produtos
 ├── users/        # Usuários
 └── main.ts       # Bootstrap da aplicação
-```
-```
 
----
-```
