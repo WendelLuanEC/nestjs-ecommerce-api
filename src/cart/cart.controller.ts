@@ -3,6 +3,7 @@ import { CartService } from './cart.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { AddToCartDto } from './dto/add-to-cart.dto';
 import { RemoveFromCartDto } from './dto/remove-from-cart.dto';
+import { Cart } from './cart.entity';
 import { ApiTags, ApiBearerAuth, ApiResponse, ApiOperation, ApiBody } from '@nestjs/swagger';
 
 @ApiTags('cart')
@@ -38,7 +39,7 @@ export class CartController {
       },
     },
   })
-  async getCart(@Request() req) {
+  async getCart(@Request() req): Promise<Cart> {
     return this.cartService.getCart(req.user);
   }
 
@@ -59,8 +60,24 @@ export class CartController {
   @ApiResponse({
     status: 200,
     description: 'Produto adicionado com sucesso. Retorna o carrinho atualizado.',
+    schema: {
+      example: {
+        id: 'uuid-do-carrinho',
+        items: [
+          {
+            id: 'uuid-item',
+            product: {
+              id: 'uuid-produto',
+              name: 'Notebook Dell Inspiron',
+              price: 4999.9,
+            },
+            quantity: 2,
+          },
+        ],
+      },
+    },
   })
-  async addToCart(@Request() req, @Body() dto: AddToCartDto) {
+  async addToCart(@Request() req, @Body() dto: AddToCartDto): Promise<Cart> {
     return this.cartService.addToCart(req.user, dto);
   }
 
@@ -80,8 +97,14 @@ export class CartController {
   @ApiResponse({
     status: 200,
     description: 'Produto removido do carrinho. Retorna o carrinho atualizado.',
+    schema: {
+      example: {
+        id: 'uuid-do-carrinho',
+        items: [],
+      },
+    },
   })
-  async removeFromCart(@Request() req, @Body() dto: RemoveFromCartDto) {
+  async removeFromCart(@Request() req, @Body() dto: RemoveFromCartDto): Promise<Cart> {
     return this.cartService.removeFromCart(req.user, dto);
   }
 }
