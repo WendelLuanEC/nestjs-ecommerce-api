@@ -2,6 +2,8 @@ import 'dotenv/config';
 import { DataSource } from 'typeorm';
 import { User } from './users/user.entity';
 import { Product } from './products/product.entity';
+import { Cart } from './cart/cart.entity';
+import { CartItem } from './cart/cart-item.entity';
 
 export default new DataSource({
   type: 'postgres',
@@ -10,6 +12,6 @@ export default new DataSource({
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [User, Product],
+  entities: [User, Product, Cart, CartItem],
   migrations: [__dirname + '/migrations/*.{ts,js}'],
 });

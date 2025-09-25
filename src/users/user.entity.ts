@@ -4,8 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
 import { Exclude } from 'class-transformer';
+import { Cart } from '../cart/cart.entity';
 
 export enum UserRole {
   ADMIN = 'admin',
@@ -43,4 +45,8 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => Cart, (cart) => cart.user)
+carts: Cart[];
+
 }
