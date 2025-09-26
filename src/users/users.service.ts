@@ -25,6 +25,11 @@ export class UsersService {
 }
 
 
+async findById(id: string): Promise<User | undefined> {
+  const user = await this.usersRepo.findOne({ where: { id } });
+  return user === null ? undefined : user;
+}
+
   async activate(email: string) {
     const user = await this.findByEmail(email);
     if (!user) throw new Error('User not found');
